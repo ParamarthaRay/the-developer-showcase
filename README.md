@@ -1,10 +1,29 @@
-# Welcome to your Lovable project
+
+# Full Stack Developer Portfolio
+
+A professional portfolio website showcasing skills, projects, experience, and achievements as a full stack web developer.
 
 ## Project info
 
 **URL**: https://lovable.dev/projects/c24a73e3-87b6-4821-bbca-3d15967e3f52
 
-## How can I edit this code?
+## Features
+
+- Responsive design that works on all devices
+- Interactive sections with smooth animations
+- Showcase for skills, projects, and work experience
+- Contact form for potential clients or employers
+- Social media links to professional networks
+
+## Built With
+
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Shadcn UI
+
+## How to edit this code?
 
 There are several ways of editing your application.
 
@@ -35,30 +54,6 @@ npm i
 # Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
 
 ## How can I deploy this project?
 
