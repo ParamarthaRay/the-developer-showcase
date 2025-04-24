@@ -1,9 +1,10 @@
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const projectCategories = ["All", "Web", "Mobile", "Backend", "DevOps"];
+const projectCategories = ["All", "Web"];
 
 const projects = [
   {
@@ -122,7 +123,7 @@ const ProjectsSection = () => {
             transition={{ delay: 0.2 }}
             className="text-3xl md:text-4xl font-bold"
           >
-            Recent Projects
+            Web Projects
           </motion.h2>
         </div>
 
@@ -159,3 +160,4 @@ const ProjectsSection = () => {
 };
 
 export default ProjectsSection;
+
