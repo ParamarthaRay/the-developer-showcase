@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
@@ -11,8 +10,7 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   useEffect(() => {
-    // Update document title
-    document.title = "Your Name | Full Stack Developer";
+    document.title = "Paramartha Ray | Full Stack Developer";
   }, []);
 
   return (

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
@@ -9,63 +8,23 @@ const projectCategories = ["All", "Web", "Mobile", "Backend", "DevOps"];
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "A full-stack e-commerce platform built with React, Node.js, and MongoDB. Features include user authentication, product catalog, shopping cart, and payment processing.",
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-    skills: ["React", "Node.js", "MongoDB", "Express", "Redux", "Stripe"],
+    title: "TMS Web App",
+    description: "A responsive, full-stack web application to streamline travel planning and booking. Users can easily browse, select, and book travel options while managing their itineraries. Integrated real-time APIs for flight, hotel, and transport data.",
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+    skills: ["MERN Stack", "React", "Node.js", "MongoDB", "Express", "REST API"],
     category: "Web",
     demoLink: "https://example.com",
-    githubLink: "https://github.com/yourusername/ecommerce",
+    githubLink: "https://github.com/ParamarthaRay/react-project-travel",
   },
   {
     id: 2,
-    title: "Task Management App",
-    description: "A productivity application for managing tasks and projects. Built with Next.js and PostgreSQL, featuring real-time updates with WebSockets.",
+    title: "Event Organizer App",
+    description: "A dynamic event management platform that allows users to create, manage, and RSVP to events. Features include event listings, real-time updates, and user authentication for secure event registration.",
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-    skills: ["Next.js", "PostgreSQL", "TypeScript", "Prisma", "Tailwind CSS"],
+    skills: ["Bootstrap", "Handlebars", "MongoDB", "Node.js", "Express"],
     category: "Web",
     demoLink: "https://example.com",
-    githubLink: "https://github.com/yourusername/taskmanager",
-  },
-  {
-    id: 3,
-    title: "Weather Forecast API",
-    description: "A RESTful API for retrieving weather forecasts. Built with Node.js and Express, integrating with external weather data providers.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-    skills: ["Node.js", "Express", "REST API", "Docker", "JWT"],
-    category: "Backend",
-    demoLink: "https://example.com",
-    githubLink: "https://github.com/yourusername/weather-api",
-  },
-  {
-    id: 4,
-    title: "Fitness Tracking Mobile App",
-    description: "A cross-platform mobile application for tracking fitness activities and progress. Built with React Native and Firebase.",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-    skills: ["React Native", "Firebase", "Redux", "Expo", "Google Maps API"],
-    category: "Mobile",
-    demoLink: "https://example.com",
-    githubLink: "https://github.com/yourusername/fitness-tracker",
-  },
-  {
-    id: 5,
-    title: "CI/CD Pipeline for Microservices",
-    description: "A comprehensive CI/CD pipeline for deploying microservices to Kubernetes. Built with GitHub Actions, Docker, and Kubernetes.",
-    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
-    skills: ["Docker", "Kubernetes", "GitHub Actions", "Terraform", "AWS"],
-    category: "DevOps",
-    demoLink: "https://example.com",
-    githubLink: "https://github.com/yourusername/cicd-pipeline",
-  },
-  {
-    id: 6,
-    title: "Real-time Chat Application",
-    description: "A real-time chat application with private and group messaging. Built with Socket.io, React, and MongoDB.",
-    image: "https://images.unsplash.com/photo-1487887235947-a955ef187fcc",
-    skills: ["React", "Socket.io", "MongoDB", "Express", "JWT"],
-    category: "Web",
-    demoLink: "https://example.com",
-    githubLink: "https://github.com/yourusername/chat-app",
+    githubLink: "https://github.com/ParamarthaRay/EventManagementWebsite",
   },
 ];
 

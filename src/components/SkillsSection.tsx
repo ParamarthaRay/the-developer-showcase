@@ -1,39 +1,33 @@
-
 import { motion } from "framer-motion";
 
 const techSkills = [
   {
-    category: "Frontend",
+    category: "Programming Languages",
     skills: [
-      { name: "HTML5", level: 90 },
-      { name: "CSS3", level: 85 },
+      { name: "C++", level: 85 },
+      { name: "Java", level: 85 },
       { name: "JavaScript", level: 90 },
-      { name: "TypeScript", level: 85 },
-      { name: "React", level: 90 },
-      { name: "Next.js", level: 80 },
-      { name: "TailwindCSS", level: 85 },
+      { name: "Python", level: 80 },
     ],
   },
   {
-    category: "Backend",
+    category: "Technologies & Frameworks",
     skills: [
+      { name: "React.js", level: 90 },
       { name: "Node.js", level: 85 },
-      { name: "Express", level: 85 },
-      { name: "MongoDB", level: 80 },
-      { name: "PostgreSQL", level: 80 },
-      { name: "GraphQL", level: 75 },
-      { name: "REST API", level: 90 },
+      { name: "Angular", level: 80 },
+      { name: "Laravel", level: 75 },
+      { name: "Bootstrap", level: 85 },
     ],
   },
   {
-    category: "DevOps & Tools",
+    category: "Other Skills",
     skills: [
-      { name: "Git", level: 85 },
-      { name: "Docker", level: 75 },
-      { name: "AWS", level: 70 },
-      { name: "CI/CD", level: 75 },
-      { name: "Jest", level: 80 },
-      { name: "Webpack", level: 75 },
+      { name: "Data Structures", level: 85 },
+      { name: "Algorithms", level: 85 },
+      { name: "Git & GitHub", level: 90 },
+      { name: "Problem Solving", level: 90 },
+      { name: "Responsive Design", level: 85 },
     ],
   },
 ];

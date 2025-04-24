@@ -1,49 +1,49 @@
-
 import { motion } from "framer-motion";
 import { Award, CalendarIcon, GraduationCap, MapPin, Trophy } from "lucide-react";
 
 const educationData = [
   {
     id: 1,
-    degree: "Master of Science in Computer Science",
-    institution: "University of Technology",
-    location: "San Francisco, CA",
-    duration: "2016 - 2018",
-    description: "Specialized in Web Technologies and Distributed Systems. Completed thesis on Scalable Microservices Architecture for Web Applications.",
-    gpa: "3.9/4.0",
+    degree: "B.Tech in Computer Science and Engineering",
+    institution: "Lovely Professional University",
+    location: "Punjab, India",
+    duration: "2022 - Present",
+    description: "Currently pursuing Computer Science and Engineering with focus on web development and programming.",
+    gpa: "8.00/10.00",
   },
   {
     id: 2,
-    degree: "Bachelor of Science in Software Engineering",
-    institution: "State College of Engineering",
-    location: "Boston, MA",
-    duration: "2012 - 2016",
-    description: "Focused on Software Development, Data Structures, and Algorithms. Participated in multiple hackathons and coding competitions.",
-    gpa: "3.8/4.0",
+    degree: "Higher Secondary (12th) - Science",
+    institution: "Hindi Higher Secondary School",
+    location: "Agartala, Tripura",
+    duration: "2020 - 2022",
+    description: "Completed 12th grade with focus on Science subjects.",
+    gpa: "90.00%",
+  },
+  {
+    id: 3,
+    degree: "Secondary Education (10th)",
+    institution: "Holy Cross School",
+    location: "Agartala, Tripura",
+    duration: "2018 - 2020",
+    description: "Completed secondary education with strong academic foundation.",
   },
 ];
 
 const certifications = [
   {
     id: 1,
-    name: "AWS Certified Solutions Architect",
-    issuer: "Amazon Web Services",
-    date: "Apr 2022",
-    expires: "Apr 2025",
+    name: "Building Web Applications in PHP",
+    issuer: "Coursera",
+    date: "November 2024",
+    credential: "EQ4RITK1JOCR",
   },
   {
     id: 2,
-    name: "Google Professional Cloud Developer",
-    issuer: "Google Cloud",
-    date: "Jan 2021",
-    expires: "Jan 2024",
-  },
-  {
-    id: 3,
-    name: "MongoDB Certified Developer",
-    issuer: "MongoDB Inc.",
-    date: "Jun 2020",
-    expires: "Jun 2023",
+    name: "Server Side JavaScript with NodeJS",
+    issuer: "Coursera",
+    date: "March 2024",
+    credential: "6SQ8D68J9SMB",
   },
 ];
 
@@ -121,7 +121,7 @@ const CertificationCard = ({ certification, index }: { certification: typeof cer
       <h4 className="font-bold">{certification.name}</h4>
       <p className="text-sm text-gray-600">
         {certification.issuer} • Issued {certification.date}
-        {certification.expires && ` • Expires ${certification.expires}`}
+        {certification.credential && ` • Credential: ${certification.credential}`}
       </p>
     </div>
   </motion.div>

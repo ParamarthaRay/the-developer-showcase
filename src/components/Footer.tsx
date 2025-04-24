@@ -1,10 +1,9 @@
-
 import { ExternalLink, Github, Heart, Linkedin, Mail } from "lucide-react";
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com/yourusername", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:your.email@example.com", label: "Email" },
+  { icon: Github, href: "https://github.com/ParamarthaRay", label: "GitHub" },
+  { icon: Linkedin, href: "https://linkedin.com/in/paramartha-ray", label: "LinkedIn" },
+  { icon: Mail, href: "mailto:paramartharay@example.com", label: "Email" },
 ];
 
 const Footer = () => {
@@ -38,9 +37,9 @@ const Footer = () => {
         </div>
         <div className="mt-10 pt-6 border-t border-gray-800 text-center text-gray-500">
           <p className="flex items-center justify-center gap-1">
-            © {year} Your Name. All rights reserved.
+            © {year} Paramartha Ray. All rights reserved.
             <span className="inline-flex items-center">
-              Made with <Heart className="h-4 w-4 mx-1 text-red-500" /> by <span className="ml-1">Your Name</span>
+              Made with <Heart className="h-4 w-4 mx-1 text-red-500" /> by Paramartha Ray
             </span>
           </p>
         </div>

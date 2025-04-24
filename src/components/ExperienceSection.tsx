@@ -1,58 +1,29 @@
-
 import { motion } from "framer-motion";
 import { CalendarIcon, MapPin } from "lucide-react";
 
 const experiences = [
   {
     id: 1,
-    role: "Senior Full Stack Developer",
-    company: "TechCorp Inc.",
-    location: "San Francisco, CA",
-    duration: "Jan 2022 - Present",
+    role: "Freelancer",
+    company: "Kohinoor Tour and Travels",
+    location: "Remote",
+    duration: "May 2024 - October 2024",
     description: [
-      "Led a team of 5 developers in building a high-traffic e-commerce platform using React, Node.js, and MongoDB.",
-      "Implemented CI/CD pipelines using GitHub Actions, reducing deployment time by 40%.",
-      "Designed and implemented a microservices architecture, improving system scalability and reliability.",
-      "Mentored junior developers and conducted code reviews to maintain code quality standards.",
+      "Contributed to the advancement of the organization's robust Tourism Booking web application.",
+      "Developed a responsive tourism agency website offering seamless travel planning and booking.",
+      "Enhanced application performance by implementing server-side pagination and nested child pagination.",
+      "Managed UI design enabling users to become efficient in tour booking and further offer user-engaging experience.",
     ],
   },
   {
     id: 2,
-    role: "Full Stack Developer",
-    company: "InnovateTech Solutions",
-    location: "New York, NY",
-    duration: "Mar 2020 - Dec 2021",
-    description: [
-      "Developed and maintained multiple client-facing web applications using React, Express.js, and PostgreSQL.",
-      "Implemented RESTful APIs and GraphQL endpoints for various client projects.",
-      "Collaborated with UX/UI designers to implement responsive, user-friendly interfaces.",
-      "Optimized database queries and implemented caching strategies, improving application performance by 30%.",
-    ],
-  },
-  {
-    id: 3,
-    role: "Frontend Developer",
-    company: "WebVision Interactive",
-    location: "Boston, MA",
-    duration: "Jun 2018 - Feb 2020",
-    description: [
-      "Built responsive and interactive user interfaces using React, Redux, and SCSS.",
-      "Implemented client-side form validation and state management for complex multi-step forms.",
-      "Collaborated with backend developers to integrate frontend components with RESTful APIs.",
-      "Conducted cross-browser testing and fixed compatibility issues across different browsers and devices.",
-    ],
-  },
-  {
-    id: 4,
-    role: "Web Development Intern",
-    company: "CodeLab Studios",
+    role: "Problem Setter Intern",
+    company: "Coden Asylums",
     location: "Remote",
-    duration: "Jan 2018 - May 2018",
+    duration: "Feb 2024 - Aug 2024",
     description: [
-      "Assisted in the development of client websites using HTML, CSS, and JavaScript.",
-      "Collaborated with senior developers to implement new features and fix bugs.",
-      "Participated in code reviews and team meetings to improve development skills.",
-      "Gained hands-on experience with version control using Git and project management using Jira.",
+      "Designed and developed competitive programming problems focused on data structures and algorithms for Code Asylums contests.",
+      "Built Java scripts to generate random input, automate test case creation, and produce expected outputs for problem validation.",
     ],
   },
 ];
