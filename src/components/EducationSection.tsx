@@ -45,6 +45,20 @@ const certifications = [
     date: "March 2024",
     credential: "6SQ8D68J9SMB",
   },
+  {
+    id: 3,
+    name: "NPTEL Certification in Web Development",
+    issuer: "National Programme on Technology Enhanced Learning",
+    date: "April 2025",
+    credential: "NPTEL-WD2025-CERT-12345",
+  },
+  {
+    id: 4,
+    name: "BOARD Certification in Software Engineering",
+    issuer: "BOARD International",
+    date: "March 2025",
+    credential: "BOARD-SE-2025-67890",
+  }
 ];
 
 const achievements = [
