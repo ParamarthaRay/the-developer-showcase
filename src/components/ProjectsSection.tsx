@@ -175,21 +175,19 @@ const ProjectsSection = () => {
           className="w-full"
         >
           <CarouselContent>
-            {Array.from({ length: Math.ceil(filteredProjects.length / 2) }).map((_, slideIndex) => (
-              <CarouselItem key={slideIndex} className="basis-full md:basis-full">
-                <motion.div
-                  variants={container}
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={{ once: true }}
-                  className="grid grid-cols-1 md:grid-cols-2 gap-8"
-                >
-                  {filteredProjects.slice(slideIndex * 2, (slideIndex + 1) * 2).map((project) => (
-                    <ProjectCard key={project.id} project={project} />
-                  ))}
-                </motion.div>
-              </CarouselItem>
-            ))}
+            <CarouselItem className="basis-full md:basis-full">
+              <motion.div
+                variants={container}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+              >
+                {filteredProjects.map((project) => (
+                  <ProjectCard key={project.id} project={project} />
+                ))}
+              </motion.div>
+            </CarouselItem>
           </CarouselContent>
           <div className="hidden md:block">
             <CarouselPrevious className="-left-16" />

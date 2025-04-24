@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Award, CalendarIcon, GraduationCap, MapPin, Trophy } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -60,7 +61,12 @@ const certifications = [
     date: "March 2024",
     credential: "6SQ8D68J9SMB",
   },
-];
+].sort((a, b) => {
+  // Parse dates and sort by most recent first
+  const dateA = new Date(a.date);
+  const dateB = new Date(b.date);
+  return dateB.getTime() - dateA.getTime();
+});
 
 const achievements = [
   {
@@ -210,15 +216,13 @@ const EducationSection = () => {
             className="w-full"
           >
             <CarouselContent className="w-full">
-              {Array.from({ length: Math.ceil(certifications.length / 2) }).map((_, slideIndex) => (
-                <CarouselItem key={slideIndex} className="basis-full md:basis-full">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {certifications.slice(slideIndex * 2, (slideIndex + 1) * 2).map((cert, index) => (
-                      <CertificationCard key={cert.id} certification={cert} index={index} />
-                    ))}
-                  </div>
-                </CarouselItem>
-              ))}
+              <CarouselItem className="basis-full md:basis-full">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {certifications.map((cert, index) => (
+                    <CertificationCard key={cert.id} certification={cert} index={index} />
+                  ))}
+                </div>
+              </CarouselItem>
             </CarouselContent>
             <div className="hidden md:block">
               <CarouselPrevious className="-left-16" />
