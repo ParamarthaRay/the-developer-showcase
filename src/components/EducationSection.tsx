@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Award, CalendarIcon, GraduationCap, MapPin, Trophy } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const educationData = [
   {
@@ -32,6 +33,20 @@ const educationData = [
 
 const certifications = [
   {
+    id: 3,
+    name: "NPTEL Certification in Web Development",
+    issuer: "National Programme on Technology Enhanced Learning",
+    date: "April 2025",
+    credential: "NPTEL-WD2025-CERT-12345",
+  },
+  {
+    id: 4,
+    name: "BOARD Certification in Software Engineering",
+    issuer: "BOARD International",
+    date: "March 2025",
+    credential: "BOARD-SE-2025-67890",
+  },
+  {
     id: 1,
     name: "Building Web Applications in PHP",
     issuer: "Coursera",
@@ -45,20 +60,6 @@ const certifications = [
     date: "March 2024",
     credential: "6SQ8D68J9SMB",
   },
-  {
-    id: 3,
-    name: "NPTEL Certification in Web Development",
-    issuer: "National Programme on Technology Enhanced Learning",
-    date: "April 2025",
-    credential: "NPTEL-WD2025-CERT-12345",
-  },
-  {
-    id: 4,
-    name: "BOARD Certification in Software Engineering",
-    issuer: "BOARD International",
-    date: "March 2025",
-    credential: "BOARD-SE-2025-67890",
-  }
 ];
 
 const achievements = [
@@ -201,11 +202,29 @@ const EducationSection = () => {
           >
             Certifications
           </motion.h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {certifications.map((cert, index) => (
-              <CertificationCard key={cert.id} certification={cert} index={index} />
-            ))}
-          </div>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="w-full">
+              {Array.from({ length: Math.ceil(certifications.length / 2) }).map((_, slideIndex) => (
+                <CarouselItem key={slideIndex} className="basis-full md:basis-full">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {certifications.slice(slideIndex * 2, (slideIndex + 1) * 2).map((cert, index) => (
+                      <CertificationCard key={cert.id} certification={cert} index={index} />
+                    ))}
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="hidden md:block">
+              <CarouselPrevious className="-left-16" />
+              <CarouselNext className="-right-16" />
+            </div>
+          </Carousel>
         </div>
 
         <motion.h3

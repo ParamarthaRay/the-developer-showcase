@@ -1,32 +1,12 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const projectCategories = ["All", "Web"];
 
 const projects = [
-  {
-    id: 1,
-    title: "TMS Web App",
-    description: "A responsive, full-stack web application to streamline travel planning and booking. Users can easily browse, select, and book travel options while managing their itineraries. Integrated real-time APIs for flight, hotel, and transport data.",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-    skills: ["MERN Stack", "React", "Node.js", "MongoDB", "Express", "REST API"],
-    category: "Web",
-    demoLink: "https://example.com",
-    githubLink: "https://github.com/ParamarthaRay/react-project-travel",
-  },
-  {
-    id: 2,
-    title: "Event Organizer App",
-    description: "A dynamic event management platform that allows users to create, manage, and RSVP to events. Features include event listings, real-time updates, and user authentication for secure event registration.",
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-    skills: ["Bootstrap", "Handlebars", "MongoDB", "Node.js", "Express"],
-    category: "Web",
-    demoLink: "https://example.com",
-    githubLink: "https://github.com/ParamarthaRay/EventManagementWebsite",
-  },
   {
     id: 3,
     title: "DAO Voting App",
@@ -36,6 +16,7 @@ const projects = [
     category: "Web",
     demoLink: "https://example.com",
     githubLink: "https://github.com/ParamarthaRay/DAO-Voting",
+    date: "2025-03",
   },
   {
     id: 4,
@@ -46,8 +27,31 @@ const projects = [
     category: "Web",
     demoLink: "https://example.com",
     githubLink: "https://github.com/ParamarthaRay/Laravel-E-LMS",
+    date: "2025-02",
   },
-];
+  {
+    id: 1,
+    title: "TMS Web App",
+    description: "A responsive, full-stack web application to streamline travel planning and booking. Users can easily browse, select, and book travel options while managing their itineraries. Integrated real-time APIs for flight, hotel, and transport data.",
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+    skills: ["MERN Stack", "React", "Node.js", "MongoDB", "Express", "REST API"],
+    category: "Web",
+    demoLink: "https://example.com",
+    githubLink: "https://github.com/ParamarthaRay/react-project-travel",
+    date: "2024-12",
+  },
+  {
+    id: 2,
+    title: "Event Organizer App",
+    description: "A dynamic event management platform that allows users to create, manage, and RSVP to events. Features include event listings, real-time updates, and user authentication for secure event registration.",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+    skills: ["Bootstrap", "Handlebars", "MongoDB", "Node.js", "Express"],
+    category: "Web",
+    demoLink: "https://example.com",
+    githubLink: "https://github.com/ParamarthaRay/EventManagementWebsite",
+    date: "2024-10",
+  },
+].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 const container = {
   hidden: { opacity: 0 },
@@ -163,17 +167,35 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full"
         >
-          {filteredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </motion.div>
+          <CarouselContent>
+            {Array.from({ length: Math.ceil(filteredProjects.length / 2) }).map((_, slideIndex) => (
+              <CarouselItem key={slideIndex} className="basis-full md:basis-full">
+                <motion.div
+                  variants={container}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                  className="grid grid-cols-1 md:grid-cols-2 gap-8"
+                >
+                  {filteredProjects.slice(slideIndex * 2, (slideIndex + 1) * 2).map((project) => (
+                    <ProjectCard key={project.id} project={project} />
+                  ))}
+                </motion.div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="hidden md:block">
+            <CarouselPrevious className="-left-16" />
+            <CarouselNext className="-right-16" />
+          </div>
+        </Carousel>
       </div>
     </section>
   );
