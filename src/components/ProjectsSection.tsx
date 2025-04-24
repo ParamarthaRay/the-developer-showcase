@@ -27,6 +27,26 @@ const projects = [
     demoLink: "https://example.com",
     githubLink: "https://github.com/ParamarthaRay/EventManagementWebsite",
   },
+  {
+    id: 3,
+    title: "DAO Voting App",
+    description: "A decentralized voting web application leveraging the MERN stack and smart contracts on Ethereum. Features include proposal creation, voting, real-time results, and Web3.js integration with MetaMask for wallet authentication.",
+    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0",
+    skills: ["MERN Stack", "Blockchain", "Web3.js", "Ethereum", "Smart Contracts", "MetaMask"],
+    category: "Web",
+    demoLink: "https://example.com",
+    githubLink: "https://github.com/ParamarthaRay/DAO-Voting",
+  },
+  {
+    id: 4,
+    title: "E-LMS",
+    description: "A feature-rich e-learning platform built with Laravel, enabling course management, student enrollment, quizzes, and performance tracking. Includes role-based access control and responsive design for enhanced user engagement.",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3",
+    skills: ["Laravel", "MySQL", "PHP", "Responsive Design", "Role-based Access"],
+    category: "Web",
+    demoLink: "https://example.com",
+    githubLink: "https://github.com/ParamarthaRay/Laravel-E-LMS",
+  },
 ];
 
 const container = {
@@ -160,4 +180,3 @@ const ProjectsSection = () => {
 };
 
 export default ProjectsSection;
-
