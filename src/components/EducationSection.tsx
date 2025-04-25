@@ -1,7 +1,18 @@
-
 import { motion } from "framer-motion";
-import { Award, CalendarIcon, GraduationCap, MapPin, Trophy } from "lucide-react";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import {
+  Award,
+  CalendarIcon,
+  GraduationCap,
+  MapPin,
+  Trophy,
+} from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const educationData = [
   {
@@ -10,8 +21,9 @@ const educationData = [
     institution: "Lovely Professional University",
     location: "Punjab, India",
     duration: "2022 - Present",
-    description: "Currently pursuing Computer Science and Engineering with focus on web development and programming.",
-    gpa: "8.00/10.00",
+    description:
+      "Currently pursuing Computer Science and Engineering with focus on web development and programming.",
+    gpa: "8.00",
   },
   {
     id: 2,
@@ -28,22 +40,24 @@ const educationData = [
     institution: "Holy Cross School",
     location: "Agartala, Tripura",
     duration: "2018 - 2020",
-    description: "Completed secondary education with strong academic foundation.",
+    description:
+      "Completed secondary education with strong academic foundation.",
+    gpa: "95.40%",
   },
 ];
 
 const certifications = [
   {
     id: 3,
-    name: "NPTEL Certification in Web Development",
+    name: "NPTEL Certification in Cloud Computing",
     issuer: "National Programme on Technology Enhanced Learning",
     date: "April 2025",
     credential: "NPTEL-WD2025-CERT-12345",
   },
   {
     id: 4,
-    name: "BOARD Certification in Software Engineering",
-    issuer: "BOARD International",
+    name: "BOARD INFINITY Certification in Database Management & SQL",
+    issuer: "BOARD INFINITY",
     date: "March 2025",
     credential: "BOARD-SE-2025-67890",
   },
@@ -61,86 +75,98 @@ const certifications = [
     date: "March 2024",
     credential: "6SQ8D68J9SMB",
   },
-].sort((a, b) => {
-  // Parse dates and sort by most recent first
-  const dateA = new Date(a.date);
-  const dateB = new Date(b.date);
-  return dateB.getTime() - dateA.getTime();
-});
+].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 const achievements = [
   {
     id: 1,
-    title: "Best Web Application Award",
-    event: "Global Hackathon 2022",
-    description: "Developed an innovative web application for real-time disaster management and resource allocation.",
+    title: "LeetCode 100 Days Badge",
+    event: "LeetCode 2025",
+    description:
+      "Earned the prestigious 100 Days Badge by consistently solving problems daily, showcasing commitment to continuous learning.",
   },
   {
     id: 2,
-    title: "1st Place - Full Stack Challenge",
-    event: "CodeFest 2021",
-    description: "Built a complete full-stack e-learning platform in 48 hours, featuring real-time collaboration and interactive assessments.",
+    title: "LeetCoding Challenge Streak",
+    event: "LeetCode Challenges 2025",
+    description:
+      "Successfully completed the January, February, and March LeetCoding Month Challenges, strengthening problem-solving and coding speed.",
   },
   {
     id: 3,
-    title: "Top Contributor",
-    event: "Open Source Project - WebFramework",
-    description: "Recognized for significant contributions to a popular open-source web framework, including performance optimizations and new features.",
+    title: "Global LeetCode Ranking",
+    event: "LeetCode Global Platform",
+    description:
+      "Secured a global rank of 700,000+ among millions of users, reflecting active participation and steady progress on the platform.",
   },
   {
     id: 4,
-    title: "Technology Innovation Award",
-    event: "Developer Conference 2020",
-    description: "Awarded for creating an accessibility toolkit that helps developers build more inclusive web applications.",
+    title: "Dean’s List – Top 10% of Batch",
+    event: "Academic Excellence",
+    description:
+      "Recognized as part of the top 10% performers in the batch based on academic performance and consistent excellence.",
   },
 ];
 
-const EducationCard = ({ education, index }: { education: typeof educationData[0]; index: number }) => (
+
+const EducationCard = ({
+  education,
+  index,
+}: {
+  education: typeof educationData[0];
+  index: number;
+}) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay: index * 0.1 }}
-    className="bg-white p-6 rounded-lg shadow-md"
+    className="bg-red-300 p-6 rounded-lg shadow-md"
   >
     <div className="flex items-start">
       <div className="bg-primary/10 p-3 rounded-full mr-4">
         <GraduationCap className="h-6 w-6 text-primary" />
       </div>
       <div>
-        <h3 className="text-xl font-bold">{education.degree}</h3>
-        <h4 className="text-lg text-primary font-medium">{education.institution}</h4>
-        <div className="flex items-center gap-2 mt-2 text-gray-600">
+        <h3 className="text-xl font-bold text-green-600">{education.degree}</h3>
+        <h4 className="text-lg font-medium text-green-700">{education.institution}</h4>
+        <div className="flex items-center gap-2 mt-2 text-black">
           <CalendarIcon className="h-4 w-4" />
           <span>{education.duration}</span>
         </div>
-        <div className="flex items-center gap-2 mt-1 text-gray-600">
+        <div className="flex items-center gap-2 mt-1 text-black">
           <MapPin className="h-4 w-4" />
           <span>{education.location}</span>
         </div>
         {education.gpa && (
-          <div className="mt-2 font-medium">GPA: {education.gpa}</div>
+          <div className="mt-2 font-medium text-black">GPA: {education.gpa}</div>
         )}
-        <p className="mt-3 text-gray-600">{education.description}</p>
+        <p className="mt-3 text-black">{education.description}</p>
       </div>
     </div>
   </motion.div>
 );
 
-const CertificationCard = ({ certification, index }: { certification: typeof certifications[0]; index: number }) => (
+const CertificationCard = ({
+  certification,
+  index,
+}: {
+  certification: typeof certifications[0];
+  index: number;
+}) => (
   <motion.div
     initial={{ opacity: 0, x: -20 }}
     whileInView={{ opacity: 1, x: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay: index * 0.05 }}
-    className="flex items-center gap-4 bg-white p-4 rounded-lg shadow-sm"
+    className="flex items-center gap-4 bg-orange-300 p-4 rounded-lg shadow-sm"
   >
     <div className="bg-primary/10 p-2 rounded-full">
       <Award className="h-5 w-5 text-primary" />
     </div>
     <div>
-      <h4 className="font-bold">{certification.name}</h4>
-      <p className="text-sm text-gray-600">
+      <h4 className="font-bold text-green-600">{certification.name}</h4>
+      <p className="text-sm text-black">
         {certification.issuer} • Issued {certification.date}
         {certification.credential && ` • Credential: ${certification.credential}`}
       </p>
@@ -148,22 +174,28 @@ const CertificationCard = ({ certification, index }: { certification: typeof cer
   </motion.div>
 );
 
-const AchievementCard = ({ achievement, index }: { achievement: typeof achievements[0]; index: number }) => (
+const AchievementCard = ({
+  achievement,
+  index,
+}: {
+  achievement: typeof achievements[0];
+  index: number;
+}) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay: index * 0.1 }}
-    className="bg-white p-5 rounded-lg shadow-md"
+    className="bg-pink-300 p-5 rounded-lg shadow-md"
   >
     <div className="flex items-start">
       <div className="bg-primary/10 p-2 rounded-full mr-4">
         <Trophy className="h-5 w-5 text-primary" />
       </div>
       <div>
-        <h3 className="text-lg font-bold">{achievement.title}</h3>
-        <p className="text-primary font-medium">{achievement.event}</p>
-        <p className="mt-2 text-gray-600">{achievement.description}</p>
+        <h3 className="text-lg font-bold text-green-600">{achievement.title}</h3>
+        <p className="font-medium text-green-700">{achievement.event}</p>
+        <p className="mt-2 text-black">{achievement.description}</p>
       </div>
     </div>
   </motion.div>
@@ -178,7 +210,7 @@ const EducationSection = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="inline-block text-primary font-semibold mb-2"
+            className="inline-block text-green-700 font-semibold mb-2"
           >
             MY QUALIFICATIONS
           </motion.span>
@@ -187,9 +219,9 @@ const EducationSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-3xl md:text-4xl font-bold"
+            className="text-3xl md:text-4xl font-bold text-green-700"
           >
-            Education & Achievements
+            EDUCATION
           </motion.h2>
         </div>
 
@@ -204,9 +236,9 @@ const EducationSection = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl font-bold mb-8 text-center"
+            className="text-2xl font-bold mb-8 text-center text-green-700"
           >
-            Certifications
+            CERTIFICATIONS
           </motion.h3>
           <Carousel
             opts={{
@@ -235,9 +267,9 @@ const EducationSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-2xl font-bold mb-8 text-center"
+          className="text-2xl font-bold mb-8 text-center text-green-700"
         >
-          Awards & Achievements
+          AWARDS & ACHIEVEMENTS
         </motion.h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {achievements.map((achievement, index) => (

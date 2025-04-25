@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <span className="text-2xl font-bold">
-              <span>Dev</span>
+              <span>Ray</span>
               <span className="text-primary">Portfolio</span>
             </span>
             <p className="mt-2 text-gray-400">Building the web, one line at a time.</p>
@@ -39,7 +39,7 @@ const Footer = () => {
           <p className="flex items-center justify-center gap-1">
             © {year} Paramartha Ray. All rights reserved.
             <span className="inline-flex items-center">
-              Made with <Heart className="h-4 w-4 mx-1 text-red-500" /> by Paramartha Ray
+              Made  by Paramartha Ray
             </span>
           </p>
         </div>

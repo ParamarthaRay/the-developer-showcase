@@ -8,19 +8,19 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    content: "+1 (555) 123-4567",
+    content: "+91 8729878044",
     href: "tel:+15551234567",
   },
   {
     icon: Mail,
     title: "Email",
-    content: "contact@yourdomain.com",
-    href: "mailto:contact@yourdomain.com",
+    content: "rayparamartha@gmail.com",
+    href: "rayparamartha@gmail.com",
   },
   {
     icon: MapPin,
     title: "Location",
-    content: "San Francisco, CA",
+    content: "Jalandhar, Punjab",
     href: "https://maps.google.com/?q=San+Francisco,+CA",
   },
 ];
@@ -56,7 +56,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-20 bg-gray-200">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <motion.span
@@ -84,7 +84,7 @@ const ContactSection = () => {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white p-6 rounded-lg shadow-md"
+              className="bg-purple-100 p-6 rounded-lg shadow-md"
             >
               <h3 className="text-xl font-bold mb-6">Contact Information</h3>
               <div className="space-y-6">
@@ -135,7 +135,7 @@ const ContactSection = () => {
                     </svg>
                   </a>
                   <a
-                    href="https://linkedin.com/in/yourusername"
+                    href="https://www.linkedin.com/in/paramartha-ray/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition-colors"
@@ -151,7 +151,7 @@ const ContactSection = () => {
                     </svg>
                   </a>
                   <a
-                    href="https://leetcode.com/yourusername"
+                    href="https://leetcode.com/u/Paramartha_Ray/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-amber-500 hover:bg-amber-600 text-white p-3 rounded-full transition-colors"
@@ -177,7 +177,7 @@ const ContactSection = () => {
             viewport={{ once: true }}
             className="lg:col-span-2"
           >
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="bg-purple-100 p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-bold mb-6">Send me a message</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

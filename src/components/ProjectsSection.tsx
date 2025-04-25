@@ -71,7 +71,7 @@ const item = {
 const ProjectCard = ({ project }: { project: typeof projects[0] }) => (
   <motion.div
     variants={item}
-    className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+    className="bg-yellow-300 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
   >
     <div className="h-48 overflow-hidden">
       <img
@@ -87,7 +87,7 @@ const ProjectCard = ({ project }: { project: typeof projects[0] }) => (
         {project.skills.map((skill) => (
           <span
             key={skill}
-            className="text-xs font-medium bg-primary/10 text-primary py-1 px-2 rounded-full"
+            className="text-xs font-medium bg-primary/10 text-primary- py-1 px-2 rounded-full"
           >
             {skill}
           </span>
@@ -159,7 +159,7 @@ const ProjectsSection = () => {
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 activeCategory === category
                   ? "bg-primary text-white"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  : "bg-gray-200 text-gray-700 hover:bg-gray-200"
               }`}
             >
               {category}

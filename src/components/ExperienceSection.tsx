@@ -30,7 +30,7 @@ const experiences = [
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-20 bg-gray-50">
+    <section id="experience" className="py-20 bg-gray-200">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <motion.span
@@ -51,11 +51,11 @@ const ExperienceSection = () => {
             Work Experience
           </motion.h2>
         </div>
-        
+
         <div className="relative">
           {/* Timeline line */}
           <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-200"></div>
-          
+
           <div className="space-y-12">
             {experiences.map((exp, index) => (
               <motion.div
@@ -68,7 +68,7 @@ const ExperienceSection = () => {
               >
                 {/* Timeline dot */}
                 <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-white"></div>
-                
+
                 <div className={`flex flex-col md:flex-row ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
                   <div className="md:w-1/2 md:pr-8 md:pl-0 md:text-right px-4 mb-6 md:mb-0">
                     <h3 className="text-xl font-bold text-gray-900">{exp.role}</h3>
@@ -82,12 +82,13 @@ const ExperienceSection = () => {
                       <span>{exp.location}</span>
                     </div>
                   </div>
-                  
+
                   <div className={`md:w-1/2 ${index % 2 === 0 ? "md:pr-8 md:text-right" : "md:pl-8"} px-4`}>
-                    <div className="bg-white p-6 rounded-lg shadow-md">
+                    {/* Change the background to blue */}
+                    <div className="bg-blue-500 p-6 rounded-lg shadow-md">
                       <ul className="list-disc space-y-2 pl-5">
                         {exp.description.map((item, i) => (
-                          <li key={i} className="text-gray-600">{item}</li>
+                          <li key={i} className="text-white">{item}</li>
                         ))}
                       </ul>
                     </div>

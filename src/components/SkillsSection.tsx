@@ -48,15 +48,12 @@ const item = {
 };
 
 const SkillBar = ({ name, level }: { name: string; level: number }) => (
-  <motion.div 
-    variants={item}
-    className="mb-6"
-  >
+  <motion.div variants={item} className="mb-6">
     <div className="flex justify-between mb-1">
       <span className="text-base font-medium">{name}</span>
       <span className="text-sm text-gray-500">{level}%</span>
     </div>
-    <div className="w-full bg-gray-200 rounded-full h-2">
+    <div className="w-full bg-gray-400 rounded-full h-2">
       <motion.div
         initial={{ width: 0 }}
         animate={{ width: `${level}%` }}
@@ -69,7 +66,7 @@ const SkillBar = ({ name, level }: { name: string; level: number }) => (
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="py-20 bg-gray-50">
+    <section id="skills" className="py-20 bg-gray-200">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <motion.span
@@ -99,7 +96,7 @@ const SkillsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-white p-6 rounded-lg shadow-md"
+              className="bg-green-100 p-6 rounded-lg shadow-md"
             >
               <h3 className="text-xl font-bold mb-6 pb-3 border-b border-gray-200">
                 {tech.category}

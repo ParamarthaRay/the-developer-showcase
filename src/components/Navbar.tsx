@@ -14,10 +14,10 @@ const NavbarItems = [
 ];
 
 const SocialLinks = [
-  { Icon: Github, href: "https://github.com/yourusername", label: "GitHub" },
-  { Icon: Linkedin, href: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
-  { Icon: Code2, href: "https://leetcode.com/yourusername", label: "LeetCode" },
-  { Icon: Mail, href: "mailto:your.email@example.com", label: "Email" },
+  { Icon: Github, href: "https://github.com/ParamarthaRay", label: "GitHub" },
+  { Icon: Linkedin, href: "https://www.linkedin.com/in/paramartha-ray/", label: "LinkedIn" },
+  { Icon: Code2, href: "https://leetcode.com/u/Paramartha_Ray/", label: "LeetCode" },
+  { Icon: Mail, href: "rayparamartha@gmail.com", label: "Email" },
 ];
 
 const Navbar = () => {
@@ -52,8 +52,8 @@ const Navbar = () => {
         <a href="#home" className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors">
           <span className="sr-only">Portfolio</span>
           <span className="flex items-center gap-2">
-            <span>Dev</span>
-            <span className="text-primary/70">Portfolio</span>
+            <span>WebDev</span>
+            <span className="text-primary/190">Portfolio</span>
           </span>
         </a>
 
