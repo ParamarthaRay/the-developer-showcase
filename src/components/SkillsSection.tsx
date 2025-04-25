@@ -96,7 +96,7 @@ const SkillsSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-green-100 p-6 rounded-lg shadow-md"
+              className="bg-green-200 p-6 rounded-lg shadow-2xl"
             >
               <h3 className="text-xl font-bold mb-6 pb-3 border-b border-gray-200">
                 {tech.category}

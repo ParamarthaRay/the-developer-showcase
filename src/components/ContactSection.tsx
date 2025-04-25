@@ -84,7 +84,7 @@ const ContactSection = () => {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-purple-100 p-6 rounded-lg shadow-md"
+              className="bg-purple-200 p-6 rounded-lg shadow-md"
             >
               <h3 className="text-xl font-bold mb-6">Contact Information</h3>
               <div className="space-y-6">
@@ -177,7 +177,7 @@ const ContactSection = () => {
             viewport={{ once: true }}
             className="lg:col-span-2"
           >
-            <div className="bg-purple-100 p-6 rounded-lg shadow-md">
+            <div className="bg-purple-200 p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-bold mb-6">Send me a message</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

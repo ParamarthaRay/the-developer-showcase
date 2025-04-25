@@ -9,7 +9,7 @@ const NavbarItems = [
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
   { name: "Experience", href: "#experience" },
-  { name: "Education", href: "#education" },
+  { name: "Qualifiactions", href: "#education" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -52,8 +52,8 @@ const Navbar = () => {
         <a href="#home" className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors">
           <span className="sr-only">Portfolio</span>
           <span className="flex items-center gap-2">
-            <span>WebDev</span>
-            <span className="text-primary/190">Portfolio</span>
+            <span>Paramartha Ray</span>
+            <span className="text-primary/190"></span>
           </span>
         </a>
 

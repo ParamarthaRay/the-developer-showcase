@@ -2,7 +2,13 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const projectCategories = ["All", "Web"];
 
@@ -10,9 +16,17 @@ const projects = [
   {
     id: 3,
     title: "DAO Voting App",
-    description: "A decentralized voting web application leveraging the MERN stack and smart contracts on Ethereum. Features include proposal creation, voting, real-time results, and Web3.js integration with MetaMask for wallet authentication.",
+    description:
+      "A decentralized voting web application leveraging the MERN stack and smart contracts on Ethereum. Features include proposal creation, voting, real-time results, and Web3.js integration with MetaMask for wallet authentication.",
     image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0",
-    skills: ["MERN Stack", "Blockchain", "Web3.js", "Ethereum", "Smart Contracts", "MetaMask"],
+    skills: [
+      "MERN Stack",
+      "Blockchain",
+      "Web3.js",
+      "Ethereum",
+      "Smart Contracts",
+      "MetaMask",
+    ],
     category: "Web",
     demoLink: "https://dao-voting-seven.vercel.app/",
     githubLink: "https://github.com/ParamarthaRay/DAO-Voting",
@@ -21,7 +35,8 @@ const projects = [
   {
     id: 4,
     title: "E-LMS",
-    description: "A feature-rich e-learning platform built with Laravel, enabling course management, student enrollment, quizzes, and performance tracking. Includes role-based access control and responsive design for enhanced user engagement.",
+    description:
+      "A feature-rich e-learning platform built with Laravel, enabling course management, student enrollment, quizzes, and performance tracking. Includes role-based access control and responsive design for enhanced user engagement.",
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3",
     skills: ["Laravel", "MySQL", "PHP", "Responsive Design", "Role-based Access"],
     category: "Web",
@@ -32,7 +47,8 @@ const projects = [
   {
     id: 1,
     title: "TMS Web App",
-    description: "A responsive, full-stack web application to streamline travel planning and booking. Users can easily browse, select, and book travel options while managing their itineraries. Integrated real-time APIs for flight, hotel, and transport data.",
+    description:
+      "A responsive, full-stack web application to streamline travel planning and booking. Users can easily browse, select, and book travel options while managing their itineraries. Integrated real-time APIs for flight, hotel, and transport data.",
     image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
     skills: ["MERN Stack", "React", "Node.js", "MongoDB", "Express", "REST API"],
     category: "Web",
@@ -43,7 +59,8 @@ const projects = [
   {
     id: 2,
     title: "Event Organizer App",
-    description: "A dynamic event management platform that allows users to create, manage, and RSVP to events. Features include event listings, real-time updates, and user authentication for secure event registration.",
+    description:
+      "A dynamic event management platform that allows users to create, manage, and RSVP to events. Features include event listings, real-time updates, and user authentication for secure event registration.",
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
     skills: ["Bootstrap", "Handlebars", "MongoDB", "Node.js", "Express"],
     category: "Web",
@@ -123,14 +140,14 @@ const ProjectCard = ({ project }: { project: typeof projects[0] }) => (
 
 const ProjectsSection = () => {
   const [activeCategory, setActiveCategory] = useState("All");
-  
+
   const filteredProjects = projects.filter(
     (project) => activeCategory === "All" || project.category === activeCategory
   );
 
   return (
-    <section id="projects" className="py-20">
-      <div className="container mx-auto px-4">
+    <section id="projects" className="py-20 bg-gray-50">
+      <div className="container mx-auto px-4 shadow-xl rounded-lg bg-white">
         <div className="text-center mb-16">
           <motion.span
             initial={{ opacity: 0 }}
@@ -151,7 +168,7 @@ const ProjectsSection = () => {
           </motion.h2>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mb-10 p-4 bg-white rounded-lg shadow-md">
           {projectCategories.map((category) => (
             <button
               key={category}
@@ -181,7 +198,7 @@ const ProjectsSection = () => {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4 py-6"
               >
                 {filteredProjects.map((project) => (
                   <ProjectCard key={project.id} project={project} />

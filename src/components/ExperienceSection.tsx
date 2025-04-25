@@ -32,7 +32,7 @@ const ExperienceSection = () => {
   return (
     <section id="experience" className="py-20 bg-gray-200">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -54,9 +54,9 @@ const ExperienceSection = () => {
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-200"></div>
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-300"></div>
 
-          <div className="space-y-12">
+          <div className="space-y-20">
             {experiences.map((exp, index) => (
               <motion.div
                 key={exp.id}
@@ -67,25 +67,28 @@ const ExperienceSection = () => {
                 className="relative"
               >
                 {/* Timeline dot */}
-                <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-white"></div>
+                <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-white z-10"></div>
 
-                <div className={`flex flex-col md:flex-row ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
+                <div className={`flex flex-col md:flex-row ${index % 2 === 0 ? "md:flex-row-reverse" : ""} gap-6`}>
+                  {/* Role, Company, Duration */}
                   <div className="md:w-1/2 md:pr-8 md:pl-0 md:text-right px-4 mb-6 md:mb-0">
-                    <h3 className="text-xl font-bold text-gray-900">{exp.role}</h3>
-                    <h4 className="text-lg text-primary font-medium">{exp.company}</h4>
-                    <div className="flex items-center gap-2 mt-2 text-gray-600 md:justify-end">
-                      <CalendarIcon className="h-4 w-4" />
-                      <span>{exp.duration}</span>
-                    </div>
-                    <div className="flex items-center gap-2 mt-1 text-gray-600 md:justify-end">
-                      <MapPin className="h-4 w-4" />
-                      <span>{exp.location}</span>
+                    <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 ease-in-out border border-gray-300">
+                      <h3 className="text-xl font-bold text-gray-900">{exp.role}</h3>
+                      <h4 className="text-lg text-primary font-medium">{exp.company}</h4>
+                      <div className="flex items-center gap-2 mt-2 text-gray-600 md:justify-end">
+                        <CalendarIcon className="h-4 w-4" />
+                        <span>{exp.duration}</span>
+                      </div>
+                      <div className="flex items-center gap-2 mt-1 text-gray-600 md:justify-end">
+                        <MapPin className="h-4 w-4" />
+                        <span>{exp.location}</span>
+                      </div>
                     </div>
                   </div>
 
+                  {/* Description */}
                   <div className={`md:w-1/2 ${index % 2 === 0 ? "md:pr-8 md:text-right" : "md:pl-8"} px-4`}>
-                    {/* Change the background to blue */}
-                    <div className="bg-blue-500 p-6 rounded-lg shadow-md">
+                    <div className="bg-blue-500 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out border border-blue-400">
                       <ul className="list-disc space-y-2 pl-5">
                         {exp.description.map((item, i) => (
                           <li key={i} className="text-white">{item}</li>

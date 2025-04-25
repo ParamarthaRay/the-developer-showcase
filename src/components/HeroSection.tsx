@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
 import profileImage from "./profile.jpeg";
-import resume from './ParamarthaRay_SpecialisedCV.pdf';
+import resume from './paramartharaycv.pdf';
 
 const HeroSection = () => {
   return (

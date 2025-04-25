@@ -1,18 +1,11 @@
 import { motion } from "framer-motion";
-import {
-  Award,
-  CalendarIcon,
-  GraduationCap,
-  MapPin,
-  Trophy,
-} from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { Award, CalendarIcon, GraduationCap, MapPin, Trophy } from "lucide-react";
+
+// Import the certificate images
+import cert1 from './nptelcloudcomputing.jpg';
+import cert2 from './boardinfinity.jpg';
+import cert3 from './webphp.jpeg';
+import cert4 from './jswithnodejs.jpeg';
 
 const educationData = [
   {
@@ -51,29 +44,33 @@ const certifications = [
     id: 3,
     name: "NPTEL Certification in Cloud Computing",
     issuer: "National Programme on Technology Enhanced Learning",
-    date: "April 2025",
+    date: "2025-04-01",
     credential: "NPTEL-WD2025-CERT-12345",
+    imagePath: cert1,
   },
   {
     id: 4,
     name: "BOARD INFINITY Certification in Database Management & SQL",
     issuer: "BOARD INFINITY",
-    date: "March 2025",
+    date: "2025-03-01",
     credential: "BOARD-SE-2025-67890",
+    imagePath: cert2,
   },
   {
     id: 1,
     name: "Building Web Applications in PHP",
     issuer: "Coursera",
-    date: "November 2024",
+    date: "2024-11-01",
     credential: "EQ4RITK1JOCR",
+    imagePath: cert3,
   },
   {
     id: 2,
     name: "Server Side JavaScript with NodeJS",
     issuer: "Coursera",
-    date: "March 2024",
+    date: "2024-03-01",
     credential: "6SQ8D68J9SMB",
+    imagePath: cert4,
   },
 ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
@@ -84,6 +81,7 @@ const achievements = [
     event: "LeetCode 2025",
     description:
       "Earned the prestigious 100 Days Badge by consistently solving problems daily, showcasing commitment to continuous learning.",
+    date: "2025-03-01",
   },
   {
     id: 2,
@@ -91,6 +89,7 @@ const achievements = [
     event: "LeetCode Challenges 2025",
     description:
       "Successfully completed the January, February, and March LeetCoding Month Challenges, strengthening problem-solving and coding speed.",
+    date: "2025-02-01",
   },
   {
     id: 3,
@@ -98,6 +97,7 @@ const achievements = [
     event: "LeetCode Global Platform",
     description:
       "Secured a global rank of 700,000+ among millions of users, reflecting active participation and steady progress on the platform.",
+    date: "2024-12-01",
   },
   {
     id: 4,
@@ -105,9 +105,9 @@ const achievements = [
     event: "Academic Excellence",
     description:
       "Recognized as part of the top 10% performers in the batch based on academic performance and consistent excellence.",
+    date: "2024-10-01",
   },
-];
-
+].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 const EducationCard = ({
   education,
@@ -121,7 +121,7 @@ const EducationCard = ({
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay: index * 0.1 }}
-    className="bg-red-300 p-6 rounded-lg shadow-md"
+    className="bg-red-300 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
   >
     <div className="flex items-start">
       <div className="bg-primary/10 p-3 rounded-full mr-4">
@@ -159,17 +159,29 @@ const CertificationCard = ({
     whileInView={{ opacity: 1, x: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay: index * 0.05 }}
-    className="flex items-center gap-4 bg-orange-300 p-4 rounded-lg shadow-sm"
+    className="flex flex-col justify-between bg-orange-300 p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
   >
-    <div className="bg-primary/10 p-2 rounded-full">
-      <Award className="h-5 w-5 text-primary" />
+    <div className="flex items-start gap-4">
+      <div className="bg-primary/10 p-2 rounded-full">
+        <Award className="h-5 w-5 text-primary" />
+      </div>
+      <div>
+        <h4 className="font-bold text-green-600">{certification.name}</h4>
+        <p className="text-sm text-black">
+          {certification.issuer} • Issued {certification.date}
+          {certification.credential && ` • Credential: ${certification.credential}`}
+        </p>
+      </div>
     </div>
-    <div>
-      <h4 className="font-bold text-green-600">{certification.name}</h4>
-      <p className="text-sm text-black">
-        {certification.issuer} • Issued {certification.date}
-        {certification.credential && ` • Credential: ${certification.credential}`}
-      </p>
+    <div className="mt-4">
+      <a
+        href={certification.imagePath}
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="inline-block px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition duration-200 text-sm"
+      >
+        View Certificate
+      </a>
     </div>
   </motion.div>
 );
@@ -186,7 +198,7 @@ const AchievementCard = ({
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay: index * 0.1 }}
-    className="bg-pink-300 p-5 rounded-lg shadow-md"
+    className="bg-pink-300 p-5 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
   >
     <div className="flex items-start">
       <div className="bg-primary/10 p-2 rounded-full mr-4">
@@ -210,7 +222,7 @@ const EducationSection = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="inline-block text-green-700 font-semibold mb-2"
+            className="inline-block text-green-700 font-semibold mb-2 text-xl md:text-2xl"
           >
             MY QUALIFICATIONS
           </motion.span>
@@ -219,62 +231,64 @@ const EducationSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-3xl md:text-4xl font-bold text-green-700"
+            className="text-4xl md:text-4xl font-bold text-green-700"
           >
             EDUCATION
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {educationData.map((edu, index) => (
-            <EducationCard key={edu.id} education={edu} index={index} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {educationData.map((education, index) => (
+            <EducationCard key={education.id} education={education} index={index} />
           ))}
         </div>
 
-        <div className="mb-16">
-          <motion.h3
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-2xl font-bold mb-8 text-center text-green-700"
-          >
-            CERTIFICATIONS
-          </motion.h3>
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent className="w-full">
-              <CarouselItem className="basis-full md:basis-full">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                  {certifications.map((cert, index) => (
-                    <CertificationCard key={cert.id} certification={cert} index={index} />
-                  ))}
-                </div>
-              </CarouselItem>
-            </CarouselContent>
-            <div className="hidden md:block">
-              <CarouselPrevious className="-left-16" />
-              <CarouselNext className="-right-16" />
-            </div>
-          </Carousel>
+        <div className="my-16">
+          <div className="text-center mb-10">
+            <motion.h3
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="text-3xl font-semibold text-green-700"
+            >
+              CERTIFICATIONS
+            </motion.h3>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            {certifications.map((certification, index) => (
+              <CertificationCard
+                key={certification.id}
+                certification={certification}
+                index={index}
+              />
+            ))}
+          </div>
         </div>
 
-        <motion.h3
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-2xl font-bold mb-8 text-center text-green-700"
-        >
-          AWARDS & ACHIEVEMENTS
-        </motion.h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {achievements.map((achievement, index) => (
-            <AchievementCard key={achievement.id} achievement={achievement} index={index} />
-          ))}
+        <div className="my-16">
+          <div className="text-center mb-10">
+            <motion.h3
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="text-2xl font-semibold text-green-700"
+            >
+              ACHIEVEMENTS
+            </motion.h3>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            {achievements.map((achievement, index) => (
+              <AchievementCard
+                key={achievement.id}
+                achievement={achievement}
+                index={index}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
