@@ -5,7 +5,7 @@ A professional portfolio website showcasing skills, projects, experience, and ac
 
 ## Project info
 
-**URL**: https://the-developer-showcase.lovable.app/
+**URL**: the-developer-showcase.vercel.app
 
 ## Features
 
