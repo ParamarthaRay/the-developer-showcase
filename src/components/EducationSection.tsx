@@ -4,8 +4,8 @@ import { Award, CalendarIcon, GraduationCap, MapPin, Trophy } from "lucide-react
 // Import the certificate images
 import cert1 from './nptelcloudcomputing.jpg';
 import cert2 from './boardinfinity.jpg';
-import cert3 from './webphp.jpeg';
-import cert4 from './jswithnodejs.jpeg';
+import cert3 from './webphp.jpg';
+import cert4 from './jswithnodejs.jpg';
 
 const educationData = [
   {
